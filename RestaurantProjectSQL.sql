@@ -1,4 +1,3 @@
-CREATE DATABASE RestaurantDB;
 USE RestaurantDB;
 
 CREATE TABLE Restuarant_Name (
@@ -24,7 +23,13 @@ FROM Restuarant_Name
 JOIN Inspection
 ON Restuarant_Name.OBJECTID = Inspection.OBJECTID;
 
+ALTER TABLE Restuarant_Name RENAME TO  Restaurant_Name; 
 
+SELECT * 
+FROM Restaurant_Name; 
 
+ALTER TABLE Restaurant_Name MODIFY COLUMN POSTALCODE  VARCHAR(20);    
 
-    
+ALTER TABLE Restaurant_Name MODIFY COLUMN RESTAURANTNAME VARCHAR(100);    
+
+ALTER TABLE Inspection MODIFY COLUMN DESCRIPTION VARCHAR(5000);    
