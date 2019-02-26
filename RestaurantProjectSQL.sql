@@ -1,0 +1,30 @@
+CREATE DATABASE RestaurantDB;
+USE RestaurantDB;
+
+CREATE TABLE Restuarant_Name (
+	OBJECTID INT PRIMARY KEY,
+    RESTAURANTNAME VARCHAR(50),
+    ADDRESS VARCHAR(50),
+    CITY VARCHAR(25),
+    STATE VARCHAR(3),
+    POSTALCODE INT
+    );
+
+CREATE TABLE Inspection(
+	OBJECTID INT PRIMARY KEY,
+    SCORE INT,
+    INSPECTIONTYPE VARCHAR(25),
+    DESCRIPTION VARCHAR(500)
+    );
+
+
+SELECT Restuarant_Name.OBJECTID, Restuarant_Name.RESTAURANTNAME, Restuarant_Name.ADDRESS, Restuarant_Name.CITY, Restuarant_Name.STATE, Restuarant_Name.POSTALCODE,
+Inspection.SCORE, Inspection.INSPECTIONTYPE, Inspection.DESCRIPTION
+FROM Restuarant_Name
+JOIN Inspection
+ON Restuarant_Name.OBJECTID = Inspection.OBJECTID;
+
+
+
+
+    
